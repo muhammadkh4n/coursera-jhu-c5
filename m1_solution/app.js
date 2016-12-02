@@ -29,7 +29,7 @@ var getClass = function (numberOfItems) {
 
 // Calculate total number of items.
 var totalItems = function (items) {
-  var str = items.replace(/,\s*,/, ",");
+  var str = items.replace(/,\s*,/g, ",");
   var arr = str.split(",");
   if (arr.length == 1 && arr[0] === "") return 0;
   return arr.length;
