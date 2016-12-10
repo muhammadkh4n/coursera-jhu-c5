@@ -51,12 +51,15 @@ input[type="text"] {
   display: none;
   font-size: 4em;
   color: rgb(242, 24, 24);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  background-color: white;
+  animation: pulse 0.8s infinite ease-in-out alternate, shake 0.1s 3;
+}
+.error span {
+  vertical-align: -8px;
 }
 .trigger-error {
   display: inline-block;
-  background-color: white;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
-  animation: pulse 0.8s infinite ease-in-out alternate, shake 0.1s 3;
 }
 
 @-webkit-keyframes pulse {
