@@ -1,0 +1,129 @@
+body {
+  background-color: #eee;
+}
+h1 {
+  margin-bottom: 30px;
+}
+input[type="text"] {
+  width: 200px;
+  float: left;
+}
+.narrow-button {
+  float: left;
+  margin-left: 10px;
+}
+.form-group {
+  margin-bottom: 0;
+}
+.row {
+  margin-top: 30px;
+}
+.menu-item {
+  background-color: #fff;
+  padding: 15px;
+  height: 250px;
+  margin-bottom: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  position: relative;
+  transition: box-shadow 0.3s;
+  cursor: default;
+}
+.menu-item:hover {
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+.menu-item button {
+  position: absolute;
+  bottom: 15px;
+}
+.menu-item h2 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+}
+.menu-item h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+.menu-item p {
+  margin-top: 10px;
+}
+.error {
+  display: none;
+  font-size: 4em;
+  color: rgb(242, 24, 24);
+}
+.trigger-error {
+  display: inline-block;
+  background-color: white;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  animation: pulse 0.8s infinite ease-in-out alternate, shake 0.1s 3;
+}
+
+@-webkit-keyframes pulse {
+  from { background-color: white; color: rgb(242, 24, 24); }
+  to { background-color: rgb(242, 24, 24); color: white; }
+}
+@-o-keyframes pulse {
+  from { background-color: white; color: rgb(242, 24, 24); }
+  to { background-color: rgb(242, 24, 24); color: white; }
+}
+@-moz-keyframes pulse {
+  from { background-color: white; color: rgb(242, 24, 24); }
+  to { background-color: rgb(242, 24, 24); color: white; }
+}
+@keyframes pulse {
+  from { background-color: white; color: rgb(242, 24, 24); }
+  to { background-color: rgb(242, 24, 24); color: white; }
+}
+
+@-webkit-keyframes shake {
+  from { transform: translateX(-15px); }
+  to { transform: translateX(15px); }
+}
+
+@keyframes shake {
+  from { transform: translateX(-15px); }
+  to { transform: translateX(15px); }
+}
+
+.loader {
+  display: none;
+  margin-left: 10px;
+  font-size: 10px;
+  float: left;
+  border-top: 1.1em solid rgba(147, 147, 147, 0.2);
+  border-right: 1.1em solid rgba(147, 147, 147, 0.2);
+  border-bottom: 1.1em solid rgba(147, 147, 147, 0.2);
+  border-left: 1.1em solid #676767;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
