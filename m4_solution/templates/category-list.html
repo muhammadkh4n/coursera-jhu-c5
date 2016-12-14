@@ -1,0 +1,7 @@
+<div class="list-group">
+  <a class="list-group-item" ng-repeat="category in $ctrl.menu" href="#"
+     ui-sref="items({short_name: category.short_name})">
+    {{ category.name }}
+    <span class="badge">{{ category.short_name }}</span>
+  </a>
+</div>

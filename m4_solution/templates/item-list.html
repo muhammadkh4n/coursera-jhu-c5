@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-sm-6" ng-repeat="item in $ctrl.menuItems">
+    <div class="media">
+      <div class="media-left">
+        <span class="short_name media-object">{{ item.short_name }}</span>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{ item.name }}</h4>
+        <p>{{ item.description }}</p>
+      </div>
+      <div class="media-right">
+        <div class="media-object">
+          <span ng-if="item.price_small">Small: <i class="price">{{ item.price_small | currency }}</i></span>
+          <span ng-if="item.price_large">Large: <i class="price">{{ item.price_large | currency }}</i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
