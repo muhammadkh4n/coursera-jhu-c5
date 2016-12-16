@@ -1,0 +1,8 @@
+<div class="container">
+  <user-info user='infoCtrl.user' ng-if="infoCtrl.user"></user-info>
+  <div class="error" ng-hide="infoCtrl.user">
+    <h1 class="alert alert-danger">
+      Not Signed Up Yet. <a ui-sref="public.signup" class="alert-link">Sign up Now!</a>
+    </h1>
+  </div>
+</div>

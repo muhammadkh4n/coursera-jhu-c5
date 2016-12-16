@@ -1,0 +1,71 @@
+<form class="form-horizontal" name="signupForm" novalidate>
+  <div class="form-group" ng-class="signupForm.fn.$touched && signupForm.fn.$error.required ? 'has-error has-feedback' : ''">
+    <label class="col-sm-2 control-label">First Name</label>
+    <div class="col-sm-10">
+      <input type="text" ng-model="$ctrl.user.first_name" name="fn" class="form-control" placeholder="First Name" required>
+      <div ng-show="signupForm.fn.$touched && signupForm.fn.$error.required">
+        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+        <span class="help-block">First Name is required.</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group" ng-class="signupForm.ln.$touched && signupForm.ln.$error.required ? 'has-error has-feedback' : ''">
+    <label class="col-sm-2 control-label">Last Name</label>
+    <div class="col-sm-10">
+      <input type="text" ng-model="$ctrl.user.last_name" name="ln" class="form-control" placeholder="Last Name" required>
+      <div ng-show="signupForm.ln.$touched && signupForm.ln.$error.required">
+        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+        <span class="help-block">Last Name is required.</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group" ng-class="signupForm.em.$touched && (signupForm.em.$error.required || signupForm.em.$error.email) ? 'has-error has-feedback' : ''">
+    <label class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" ng-model="$ctrl.user.email" name="em" class="form-control" placeholder="Email" required>
+      <div ng-show="signupForm.em.$touched && (signupForm.em.$error.required || signupForm.em.$error.email)">
+        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+        <span class="help-block">
+          <span ng-show="signupForm.em.$error.required">Email is required.</span>
+          <span ng-show="signupForm.em.$error.email">Enter a valid Email.</span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group" ng-class="signupForm.ph.$touched && (signupForm.ph.$error.required || signupForm.ph.$error.pattern) ? 'has-error has-feedback': ''">
+    <label class="col-sm-2 control-label">Phone Number</label>
+    <div class="col-sm-10">
+      <input type="text" ng-model="$ctrl.user.phone_number" name="ph" class="form-control" placeholder="Phone Number with format: 123-456-7890" required pattern="\d{3}-\d{3}-\d{4}">
+      <div ng-show="signupForm.ph.$touched && (signupForm.ph.$error.required || signupForm.ph.$error.pattern)">
+        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+        <span class="help-block">
+          <span ng-show="signupForm.ph.$error.required">Phone Number is required.</span>
+          <span ng-show="signupForm.ph.$error.pattern">Enter a valid Phone Number.</span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group" ng-class="signupForm.fav.$touched && (signupForm.fav.$error.required || signupForm.fav.$error.menu_number || signupForm.fav.$pending.menu_number) ? 'has-error has-feedback' : ''">
+    <label class="col-sm-2 control-label">Menu Number</label>
+    <div class="col-sm-10">
+      <input type="tel" ng-model="$ctrl.user.favorite" ng-model-options="{updateOn: 'mousedown blur'}" name="fav" class="form-control" placeholder="Short Name of Favorite Menu Item" required menu-number>
+      <div  ng-show="signupForm.fav.$touched && (signupForm.fav.$error.required || signupForm.fav.$error.menu_number || signupForm.fav.$pending.menu_number)">
+        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+        <span class="help-block">
+          <span ng-show="signupForm.fav.$error.required">Menu Number is Required.</span>
+          <span ng-show="signupForm.fav.$error.menu_number">No such menu number exists.</span>
+          <span ng-show="signupForm.fav.$pending.menu_number">Checking if menu number exists.</span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button ng-disabled="signupForm.$invalid || signupForm.fav.$pending.menu_number" ng-click="$ctrl.signup({data: $ctrl.user}); $ctrl.reset(signupForm)" class="btn btn-primary">Sign Up</button>
+    </div>
+  </div>
+</form>
+
+<div ng-if="$ctrl.registered">
+  <h2 class="alert alert-success text-center">Your information has been saved</h2>
+</div>
